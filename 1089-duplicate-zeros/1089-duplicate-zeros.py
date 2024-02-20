@@ -1,16 +1,12 @@
 class Solution:
     def duplicateZeros(self, arr: List[int]) -> None:
-        i = 0
-        length = len(arr)
+        
+        for i in range(len(arr)-1, -1, -1):
 
-        while(i < length):
             if arr[i] == 0:
-                arr = arr[:i+1] + [0] + arr[i+1:len(arr)-1]
-                i += 1
-            i += 1
+                for j in range(len(arr)-1, i, -1):
+                    arr[j] = arr[j-1]
         
-        
-        print(arr)
         """
         Do not return anything, modify arr in-place instead.
         """
