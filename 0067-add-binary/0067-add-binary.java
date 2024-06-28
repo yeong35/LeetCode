@@ -1,28 +1,35 @@
 class Solution {
     public String addBinary(String a, String b) {
-        int m = 0;
-        int n = 0;
+        StringBuilder sb = new StringBuilder();
 
-        for(int i = a.length()-1, temp = 1; i>-1; i--, temp*=2){
-            m += temp * (a.charAt(i)-48);
+        int sum = 0;
+        int temp = 0;
+
+        int i = a.length()-1;
+        int j = b.length()-1;
+
+        while(i > -1 || j > -1){
+            sum = temp;
+            if(i > -1){
+                sum += a.charAt(i) - '0';
+                i--;
+            }
+
+            if(j > -1){
+                sum += b.charAt(j) - '0';
+                j--;
+            }
+
+            sb.append(sum%2);
+            temp = sum/2;
+
         }
 
-        for(int i = b.length()-1, temp = 1; i>-1; i--, temp*=2){
-            n += temp * (b.charAt(i) - 48);
+        if(temp > 0){
+            sb.append(temp);
         }
 
-        int sum = m+n;
-
-        if(sum==0)
-            return "0";
-
-        StringBuilder result = new StringBuilder();
-
-        while(sum > 0){
-            result.append(sum%2);
-            sum /= 2;
-        }
-
-        return result.reverse().toString();
+        return sb.reverse().toString();
+        
     }
 }
