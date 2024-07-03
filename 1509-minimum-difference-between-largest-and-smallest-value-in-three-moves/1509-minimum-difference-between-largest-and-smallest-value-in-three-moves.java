@@ -15,7 +15,7 @@ class Solution {
         for (int i = 0; i < 3; i++) {
             if (head >= tail)
                 return 0;
-            System.out.println(sum / (tail - head + 1));
+            
             if (Math.abs(nums[head] - sum / (tail - head + 1)) > Math.abs(nums[tail] - sum / (tail - head + 1))) {
                 sum -= nums[head];
                 head++;
