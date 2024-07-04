@@ -14,12 +14,11 @@ class Solution {
         ListNode current = head;
         ListNode temp = null;
 
-
         while(next != null){
             temp = new ListNode(GCD(current.val, next.val), next);
             current.next = temp;
 
-            current = current.next.next;
+            current = next;
             next = next.next;
         }
 
