@@ -4,11 +4,11 @@ class Solution {
         int result = numBottles;
 
         while(emptyBottles/numExchange != 0){
-            result += emptyBottles/numExchange;
-            emptyBottles = (emptyBottles+emptyBottles/numExchange) / numExchange;
-        }
+            numBottles = emptyBottles/numExchange;
+            emptyBottles = emptyBottles%numExchange + numBottles;
 
-        System.out.println(result + " " +emptyBottles);
+            result += numBottles;
+        }
 
         return result;
 
