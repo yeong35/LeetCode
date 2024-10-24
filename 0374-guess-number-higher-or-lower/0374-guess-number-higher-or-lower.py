@@ -19,7 +19,7 @@ class Solution:
                 n = (low+high)//2
 
             else:
-                high = n
+                high = n-1
                 n = (low+high)//2
             
             guessed = guess(n)
