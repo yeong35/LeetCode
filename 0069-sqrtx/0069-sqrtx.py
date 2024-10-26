@@ -12,4 +12,4 @@ class Solution:
                 low = middle+1
 
         
-        return low-1
+        return high
