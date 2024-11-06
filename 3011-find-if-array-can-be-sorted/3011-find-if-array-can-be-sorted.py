@@ -21,14 +21,10 @@ class Solution:
                 prev = curr
                 head = i
                 tail = i
-            
-            print(operated_nums)
-            print(head,tail)
 
         if head != tail:
             operated_nums += sorted(nums[head:tail+1])
         else:
             operated_nums.append(nums[head])
-        print(operated_nums)
 
         return operated_nums == sorted_nums
