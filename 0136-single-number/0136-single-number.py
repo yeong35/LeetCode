@@ -1,15 +1,12 @@
 class Solution:
     def singleNumber(self, nums: List[int]) -> int:
-        count = {}
+        temp = []
 
         for i in nums:
-            if i not in count:
-                count[i] = 1
+            if i not in temp:
+                temp.append(i)
             else:
-                count[i] = count[i]+1
+                temp.remove(i)
 
-        for key, value in count.items():
-            print(key, value)
-            if value==1:
-                return key
 
+        return temp[0]
