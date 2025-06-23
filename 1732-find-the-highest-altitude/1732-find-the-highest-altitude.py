@@ -6,5 +6,5 @@ class Solution:
         for i in gain:
             curr += i
             result = max(result, curr)
-        
+
         return result
