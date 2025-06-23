@@ -1,14 +1,11 @@
 class Solution:
     def kidsWithCandies(self, candies: List[int], extraCandies: int) -> List[bool]:
         result = []
-        greatest = max(candies)
-        temp = 0
+        greatestNum = max(candies)
 
-        for i, n in enumerate(candies):
-            temp = candies[i] + extraCandies
-            if greatest <= temp:
+        for i in candies:
+            if i+extraCandies >= greatestNum:
                 result.append(True)
             else:
-                result.append(False)    
-
+                result.append(False)
         return result
