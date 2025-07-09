@@ -1,15 +1,14 @@
 class RecentCounter:
 
     def __init__(self):
-        self.storage = []
+        self.save = []
 
     def ping(self, t: int) -> int:
-        self.storage.append(t)
-        minimum = t - 3000
-        for i in range(len(self.storage)):
-            if self.storage[i] >= minimum:
-                return len(self.storage) - i
+        self.save.append(t)
+        while self.save and self.save[0] < t-3000:
+            self.save.pop(0)
         
+        return len(self.save)
 
 
 # Your RecentCounter object will be instantiated and called as such:
