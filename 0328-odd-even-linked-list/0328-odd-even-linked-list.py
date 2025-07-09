@@ -13,14 +13,14 @@ class Solution:
         odd = head
         even = head.next
 
-        while (odd and odd.next) or (even and even.next):
+        while even and even.next:
             if odd and odd.next:
                 odd.next = odd.next.next
                 odd = odd.next
             if even and even.next:
                 even.next = even.next.next
                 even = even.next
-        
+        print(odd.val)
         odd.next = evenhead
 
         return head
