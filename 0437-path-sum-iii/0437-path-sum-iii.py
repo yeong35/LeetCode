@@ -1,14 +1,3 @@
-def pathSequence(node, accum):
-    if node == None:
-        return 0
-    
-    count = 0
-    if accum == node.val:
-        count += 1
-    
-    count += pathSequence(node.left, accum-node.val)+pathSequence(node.right, accum-node.val)
-
-    return count
 # Definition for a binary tree node.
 # class TreeNode:
 #     def __init__(self, val=0, left=None, right=None):
@@ -17,7 +6,26 @@ def pathSequence(node, accum):
 #         self.right = right
 class Solution:
     def pathSum(self, root: Optional[TreeNode], targetSum: int) -> int:
-        if root == None:
-            return 0
-        
-        return pathSequence(root, targetSum)+self.pathSum(root.left, targetSum)+self.pathSum(root.right, targetSum)
+        cnt = 0
+        def recursion(root, h, curr):
+            nonlocal cnt
+            if not root:
+                return
+            
+            curr += root.val
+
+            if curr == targetSum:
+                cnt+=1
+            if h[curr-targetSum] > 0:
+                cnt += h[curr-targetSum]
+
+            h[curr] += 1
+
+            recursion(root.left, h, curr)
+            recursion(root.right, h, curr)
+
+            h[curr] -= 1
+
+        h = defaultdict(int)
+        recursion(root, h, 0)
+        return cnt
