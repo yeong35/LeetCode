@@ -1,12 +1,9 @@
 class Solution:
     def singleNumber(self, nums: List[int]) -> int:
-        temp = []
+        checker = Counter(nums)
 
-        for i in nums:
-            if i not in temp:
-                temp.append(i)
-            else:
-                temp.remove(i)
-
-
-        return temp[0]
+        for i in checker:
+            if checker[i] == 1:
+                return i
+        
+        return -1
