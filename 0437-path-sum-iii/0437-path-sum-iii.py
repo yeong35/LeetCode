@@ -6,9 +6,9 @@
 #         self.right = right
 class Solution:
     def pathSum(self, root: Optional[TreeNode], targetSum: int) -> int:
-        cnt = 0
-        def recursion(root, h, curr):
+        def dfs(root, h, curr):
             nonlocal cnt
+
             if not root:
                 return
             
@@ -16,16 +16,24 @@ class Solution:
 
             if curr == targetSum:
                 cnt+=1
+            
             if h[curr-targetSum] > 0:
                 cnt += h[curr-targetSum]
+            
+            h[curr]+=1
 
-            h[curr] += 1
+            dfs(root.left, h, curr)
+            dfs(root.right, h, curr)
 
-            recursion(root.left, h, curr)
-            recursion(root.right, h, curr)
 
-            h[curr] -= 1
+            h[curr]-=1
+            
 
+        if not root:
+            return 0
+
+        cnt = 0
         h = defaultdict(int)
-        recursion(root, h, 0)
+        dfs(root, h, 0)
+        
         return cnt
