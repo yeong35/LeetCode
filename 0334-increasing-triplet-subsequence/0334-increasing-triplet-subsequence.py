@@ -1,13 +1,15 @@
 class Solution:
     def increasingTriplet(self, nums: List[int]) -> bool:
-        first = float("inf")
-        second = float("inf")
-
+        first = 2**31 - 1
+        second = 2**31 - 1
+        
         for i in nums:
-            if i <= first:
+            print(first, second)
+            if i < first:
                 first = i
-            elif i <= second:
+            elif i > first and i < second:
                 second = i
-            else:
+            elif i > second:
                 return True
+
         return False
