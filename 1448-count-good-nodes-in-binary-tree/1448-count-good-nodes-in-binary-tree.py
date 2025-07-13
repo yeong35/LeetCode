@@ -6,14 +6,27 @@
 #         self.right = right
 class Solution:
     def goodNodes(self, root: TreeNode) -> int:
-        def validate(root, threshold):
-            if not root:
-                return 0
+        queue = [root]
+        high = root.val
+        cnt = 0
+
+        while queue:
+            n = len(queue)
+            temp = high
             
-            mid = 1 if root.val >= threshold else 0
-            left = validate(root.left, max(threshold, root.val))
-            right = validate(root.right, max(threshold, root.val))
+            for i in range(n):
+                curr = queue.pop(0)
+                if curr.val <= high:
+                    cnt+=1
+                else:
+                    temp = curr.val
 
-            return mid+left+right
+                if curr.left:
+                    queue.append(curr.left)
+                if curr.right:
+                    queue.append(curr.right)
 
-        return validate(root, root.val)
+            high = temp
+
+
+        return cnt
