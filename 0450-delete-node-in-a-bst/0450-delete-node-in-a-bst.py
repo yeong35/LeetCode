@@ -5,27 +5,28 @@
 #         self.left = left
 #         self.right = right
 class Solution:
-    def minNumber(self, root):
-        while root.left:
-            root = root.left
-        return root.val
-        
     def deleteNode(self, root: Optional[TreeNode], key: int) -> Optional[TreeNode]:
+        def findmin(root):
+            value = root.val
+            while root:
+                value = root.val
+                root = root.left
+            return value           
         if not root:
             return None
-        
-        if root.val > key:
-            root.left = self.deleteNode(root.left, key)
-        elif root.val < key:
-            root.right = self.deleteNode(root.right, key)
-        else:
 
-            if not root.left:
-                return root.right
+        if root.val < key:
+            root.right = self.deleteNode(root.right, key)
+        elif root.val > key:
+            root.left = self.deleteNode(root.left, key)
+        else:
+            if not root.left and not root.right:
+                return None
             elif not root.right:
                 return root.left
             else:
-                root.val = self.minNumber(root.right)
+                low = findmin(root.right)
+                root.val = low
                 root.right = self.deleteNode(root.right, root.val)
-        
+
         return root
