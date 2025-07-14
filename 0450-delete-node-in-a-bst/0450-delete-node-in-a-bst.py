@@ -21,9 +21,9 @@ class Solution:
             root.left = self.deleteNode(root.left, key)
         else:
             if not root.left and not root.right:
-                return None
+                root = None
             elif not root.right:
-                return root.left
+                root = root.left
             else:
                 low = findmin(root.right)
                 root.val = low
