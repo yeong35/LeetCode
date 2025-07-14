@@ -8,19 +8,21 @@ class Solution:
     def __init__(self):
         self.result = []
     def pathSum(self, root: Optional[TreeNode], targetSum: int) -> List[List[int]]:
-        def recursion(root, values):
+        def dfs(root, storage, targetSum):
             if not root:
                 return
             
-            values.append(root.val)
-            if not root.left and not root.right:
-                if sum(values) == targetSum:
-                    self.result.append(list(values))
-                
-            recursion(root.left, values)
-            recursion(root.right, values)
+            storage.append(root.val)
+            targetSum -= root.val
 
-            values.pop()
-        
-        recursion(root, [])
+            if not root.left and not root.right and targetSum == 0:
+                self.result.append(list(storage))
+            
+            dfs(root.left, storage, targetSum)
+            dfs(root.right, storage, targetSum)
+
+            storage.pop()
+
+        dfs(root, [], targetSum)
+
         return self.result
