@@ -6,26 +6,36 @@
 #         self.right = right
 class Solution:
     def leafSimilar(self, root1: Optional[TreeNode], root2: Optional[TreeNode]) -> bool:
-        def findleafs(root):
-            leafs = []
+        stack = [root1]
+        leaf1 = []
+        leaf2 = []
 
-            stack = [root]
+        while stack:
+            curr = stack.pop()
 
-            while stack:
-                curr = stack.pop()
+            if curr.left is None and curr.right is None:
+                leaf1.append(curr.val)
+                continue
 
-                if not curr.left and not curr.right:
-                    leafs.append(curr.val)
-                
-                if curr.left:
-                    stack.append(curr.left)
-                if curr.right:
-                    stack.append(curr.right)
-            
-            return leafs
+            if curr.left:
+                stack.append(curr.left)
 
+            if curr.right:
+                stack.append(curr.right)
 
-        leafs1 = findleafs(root1)
-        leafs2 = findleafs(root2)
+        stack.append(root2)
 
-        return leafs1 == leafs2
+        while stack:
+            curr = stack.pop()
+
+            if curr.left is None and curr.right is None:
+                leaf2.append(curr.val)
+                continue
+
+            if curr.left:
+                stack.append(curr.left)
+
+            if curr.right:
+                stack.append(curr.right)
+
+        return leaf1 == leaf2
