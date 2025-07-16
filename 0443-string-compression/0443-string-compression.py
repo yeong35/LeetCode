@@ -1,43 +1,30 @@
 class Solution:
     def compress(self, chars: List[str]) -> int:
-        compIdx = 0
-        char = chars[0]
-        cnt = 1
+        left = 0
+        idx = 0
+        c = chars[0]
+
         
-        for idx in range(1, len(chars)):
-            if chars[idx] == char:
-                cnt+=1
-            else:
-                if cnt == 1:
-                    chars[compIdx] = char
-                    compIdx+=1
+        for right in range(len(chars)):
+            if chars[right] != c:
+                chars[idx] = c
+                idx+=1
+                if right - left > 1:
+                    n = str(right-left)
+                    for i in n:
+                        chars[idx] = i
+                        idx+=1
 
-                    char = chars[idx]
-                    cnt = 1
-                else:
-                    chars[compIdx] = char
-                    compIdx+=1
+                c = chars[right]
+                left = right
+        
 
-                    s = str(cnt)
-                    for i in s:
-                        chars[compIdx] = i
-                        compIdx+=1
+        chars[idx] = c
+        idx+=1
+        if len(chars) - left > 1:
+            n = str(len(chars)-left)
+            for i in n:
+                chars[idx] = i
+                idx+=1
 
-                    char = chars[idx]
-                    cnt = 1
-
-        # trim
-        if cnt == 1:
-            chars[compIdx] = char
-            compIdx+=1
-        else:
-            chars[compIdx] = char
-            compIdx+=1
-
-            s = str(cnt)
-            for i in s:
-                chars[compIdx] = i
-                compIdx+=1
-
-
-        return compIdx
+        return idx
