@@ -6,34 +6,27 @@
 #         self.right = right
 class Solution:
     def pathSum(self, root: Optional[TreeNode], targetSum: int) -> int:
-        def dfs(root, h, curr):
-            nonlocal cnt
+        def pathCheck(root, h, curr):
+            nonlocal cnt 
 
             if not root:
                 return
-            
+
             curr += root.val
 
-            if curr == targetSum:
-                cnt+=1
-            
-            if h[curr-targetSum] > 0:
-                cnt += h[curr-targetSum]
-            
-            h[curr]+=1
+            h[curr] += 1
+            cnt += h[curr-targetSum]
 
-            dfs(root.left, h, curr)
-            dfs(root.right, h, curr)
+            pathCheck(root.left, h, curr)
+            pathCheck(root.right, h, curr)
 
-
-            h[curr]-=1
-            
-
-        if not root:
-            return 0
-
-        cnt = 0
-        h = defaultdict(int)
-        dfs(root, h, 0)
+            h[curr] -= 1
         
+        
+        h = defaultdict(int)
+        h[0] += 1
+        cnt = 0
+
+        pathCheck(root, h, 0)
+
         return cnt
