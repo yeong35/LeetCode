@@ -15,7 +15,6 @@ class Solution:
         nNode = head
 
         while curr:
-            print(curr.val, nNode.val, mCount, nCount)
             if mCount < m:
                 mCount+=1
                 
