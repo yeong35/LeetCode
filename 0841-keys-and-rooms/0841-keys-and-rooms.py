@@ -1,35 +1,16 @@
 class Solution:
     def canVisitAllRooms(self, rooms: List[List[int]]) -> bool:
-        def find(x):
-            if x == parents[x]:
-                return parents[x]
-            else:
-                return find(parents[x])
-        
-        def union(x, y):
-            x = find(x)
-            y = find(y)
-            
-            if x<y:
-                parents[y] = x
-            else:
-                parents[x] = y
-
-        parents = [i for i in range(len(rooms))]
+        visit = set()
 
         stack = [0]
+        visit.add(0)
 
         while stack:
-            room = stack.pop()
+            curr = stack.pop()
 
-            for key in rooms[room]:
-                if find(room) != find(key):
-                    union(room, key)
+            for key in rooms[curr]:
+                if key not in visit:
                     stack.append(key)
-        
-        for i in range(len(rooms)):
-            find(i)
+                    visit.add(key)
 
-        return len(set(parents)) < 2
-
-        
+        return len(visit) == len(rooms)
