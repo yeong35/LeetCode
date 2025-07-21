@@ -1,10 +1,28 @@
 class Solution:
     def longestPalindrome(self, s: str) -> str:
-        result = ""
+        def palindromes(low, high):
+            ans = ""
+            while low >= 0 and high < len(s):
+                if s[low] != s[high]:
+                    break
+                
+                ans = s[low:high+1]
 
+                low -= 1
+                high += 1
+
+            return ans
+
+        longest = ""
         for i in range(len(s)):
-            for j in range(i, len(s)+1):
-                t = s[i:j]
-                if t == t[::-1] and len(t) > len(result):
-                    result = t
-        return result
+            temp = palindromes(i, i)
+
+            if len(longest) < len(temp):
+                longest = temp
+            
+            temp = palindromes(i, i+1)
+
+            if len(longest) < len(temp):
+                longest = temp
+
+        return longest
