@@ -1,15 +1,21 @@
 class Solution:
     def makeFancyString(self, s: str) -> str:
+        prevCharacter = s[0]
+        cnt = 0
 
-        if len(s) < 3:
-            return s
+        result = []
 
-        result = [s[0], s[1]]
-
-        for i in range(2, len(s)):
-            if s[i] == s[i-1] and s[i] == s[i-2]:
-                continue
+        for i in s:
+            if i == prevCharacter:
+                cnt += 1
             else:
-                result.append(s[i])
+                prevCharacter = i
+                cnt = 1
+            
+            if cnt < 3:
+                result.append(i)
+            else:
+                continue
 
         return "".join(result)
+
