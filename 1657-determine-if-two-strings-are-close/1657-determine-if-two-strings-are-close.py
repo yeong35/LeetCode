@@ -1,8 +1,6 @@
 class Solution:
     def closeStrings(self, word1: str, word2: str) -> bool:
-        wordSet1 = set(word1)
-        wordSet2 = set(word2)
-        wordCount1 = sorted(Counter(word1).values())
-        wordCount2 = sorted(Counter(word2).values())
-        return wordSet1 == wordSet2 and wordCount1 == wordCount2
-        
+        h1 = Counter(word1)
+        h2 = Counter(word2)
+
+        return sorted(h1.keys()) == sorted(h2.keys()) and sorted(h1.values()) == sorted(h2.values())
