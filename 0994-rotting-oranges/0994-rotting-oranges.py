@@ -4,7 +4,7 @@ class Solution:
         n = len(grid[0])
 
         move = [(1, 0), (-1, 0), (0, 1), (0, -1)]
-        queue = []
+        queue = collections.deque()
         fresh = 0
         for i in range(m):
             for j in range(n):
@@ -15,13 +15,13 @@ class Solution:
                     queue.append((i,j))
         
         sec = 0
-        if fresh ==0:
+        if fresh == 0:
             return sec
         
         while queue:
             k = len(queue)
             for _ in range(k):
-                x, y = queue.pop(0)
+                x, y = queue.popleft()
 
                 for i, j in move:
                     i += x
