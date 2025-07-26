@@ -6,32 +6,19 @@
 #         self.right = right
 class Solution:
     def longestZigZag(self, root: Optional[TreeNode]) -> int:
-        stack = [(-1, 0, root)]
-        longest = 0
-
-        # 0 left, 1 right
-        while stack:
-            direction, cnt, curr = stack.pop()
-
-            longest = max(longest, cnt)
+        def zigzag(root, left, curr):
+            if not root: 
+                return
             
-            # first
-            if direction == -1:
-                if curr.left:
-                    stack.append((0, cnt+1, curr.left))
-                if curr.right:
-                    stack.append((1, cnt+1, curr.right))
-            # from left
-            elif direction == 0:
-                if curr.left:
-                    stack.append((0, 1, curr.left))
-                if curr.right:
-                    stack.append((1, cnt+1, curr.right))
-            # from right
-            else:
-                if curr.left:
-                    stack.append((0, cnt+1, curr.left))
-                if curr.right:
-                    stack.append((1, 1, curr.right))
+            self.result = max(self.result, curr)
 
-        return longest
+            if left:
+                zigzag(root.left, True, 1)
+                zigzag(root.right, False, curr+1)
+            else:
+                zigzag(root.left, True, curr+1)
+                zigzag(root.right, False, 1)
+        
+        self.result = 0
+        zigzag(root, True, self.result)
+        return self.result
