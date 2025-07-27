@@ -6,27 +6,19 @@
 #         self.right = right
 class Solution:
     def goodNodes(self, root: TreeNode) -> int:
-        queue = [root]
-        high = root.val
-        cnt = 0
-
-        while queue:
-            n = len(queue)
-            temp = high
+        def count_good_nodes(root, threshold):
+            if not root:
+                return
             
-            for i in range(n):
-                curr = queue.pop(0)
-                if curr.val <= high:
-                    cnt+=1
-                else:
-                    temp = curr.val
+            if root.val >= threshold:
+                self.result+=1
+            
+            count_good_nodes(root.left, max(threshold, root.val))
+            count_good_nodes(root.right, max(threshold, root.val))
+        
+        if not root:
+            return 0
 
-                if curr.left:
-                    queue.append(curr.left)
-                if curr.right:
-                    queue.append(curr.right)
-
-            high = temp
-
-
-        return cnt
+        self.result = 0
+        count_good_nodes(root, root.val)
+        return self.result
