@@ -1,31 +1,26 @@
 class Solution:
     def nearestExit(self, maze: List[List[str]], entrance: List[int]) -> int:
-        rows = len(maze)
-        cols = len(maze[0])
-        
-        def isValid(x, y):
-            if 0 <= x < rows and 0<=y<cols and maze[x][y] == '.':
-                return True
-            return False
+        move = [[1, 0], [-1, 0], [0, -1], [0, 1]]
 
-        x, y = entrance
-        maze[x][y] = '+'
-        directions = [(0,1), (0, -1), (1, 0), (-1, 0)]
-        que = deque()
-        que.append((x, y, 0))
+        maze[entrance[0]][entrance[1]] = '+'
+        q = [entrance]
+        step = 0
 
-        while que:
-            x, y, step = que.popleft()
+        while q:
+            n = len(q)
+            for _ in range(n):
+                r, c = q.pop(0)
+
+                for i, j in move:
+                    i += r
+                    j += c
+
+                    if 0<=i<len(maze) and 0<=j<len(maze[0]) and maze[i][j] == ".":
+                        if i==0 or i==len(maze)-1 or j==0 or j==len(maze[0])-1:
+                            return step+1
+                        q.append([i, j])
+                        maze[i][j] = '+'
+
+            step += 1
             
-            for i, j in directions:
-                i += x
-                j += y
-
-                if isValid(i,j):
-                    if i == 0 or j == 0 or i == rows-1 or j == cols-1:
-                        return step+1
-
-                    que.append((i,j,step+1))
-                    maze[i][j] = "+"
-
         return -1
