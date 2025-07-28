@@ -1,41 +1,37 @@
 class Solution:
     def calcEquation(self, equations: List[List[str]], values: List[float], queries: List[List[str]]) -> List[float]:
-        def find(start, target, val):
+        def traverse(start, target, curr):
+            temp = -1.0
 
-            visit.add(start)
-            r = -1.0
-            if start == target:
-                return val
-            
-            if target in h[start]:
-                r = val*h[start][target]
-            else:
-                for neighbor in h[start]:
-                    if neighbor not in visit:
-                        r = find(neighbor, target, val*h[start][neighbor])
-                    if r != -1:
+            if target in graph[start]:
+                return curr*graph[start][target]
+
+            visit.add(start)            
+            for neighbor in graph[start]:
+                if neighbor not in visit:
+                    temp = traverse(neighbor, target, curr*graph[start][neighbor])
+                    if temp != -1:
                         break
+            
             visit.remove(start)
-            return r
 
+            return temp
 
-        h = defaultdict(defaultdict)
+        graph = defaultdict(defaultdict)
         visit = set()
+
         result = []
-        for (i, j), value in zip(equations, values):
-            h[i][j] = value
-            h[j][i] = 1/value
+
+        for (i, j), k in zip(equations, values):
+            graph[i][j] = k
+            graph[j][i] = 1/k
 
         for i, j in queries:
-            val = -1.0
-            if i not in h or j not in h:
-                val = -1
-            elif i==j:
-                val = 1.0
+            if i not in graph or j not in graph:
+                result.append(-1.0)
+            elif i == j:
+                result.append(1.0)
             else:
-                val = find(i, j, 1)
-            
-            result.append(val)
-
-
+                result.append(traverse(i, j, 1))
+        
         return result
