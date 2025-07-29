@@ -1,4 +1,4 @@
-<h2><a href="https://leetcode.com/problems/pass-the-pillow/?envType=daily-question&envId=2024-07-06">2582. Pass the Pillow</a></h2><h3>Easy</h3><hr><p>There are <code>n</code> people standing in a line labeled from <code>1</code> to <code>n</code>. The first person in the line is holding a pillow initially. Every second, the person holding the pillow passes it to the next person standing in the line. Once the pillow reaches the end of the line, the direction changes, and people continue passing the pillow in the opposite direction.</p>
+<h2><a href="https://leetcode.com/problems/pass-the-pillow/editorial/?envType=company&envId=mathworks&favoriteSlug=mathworks-six-months">2582. Pass the Pillow</a></h2><h3>Easy</h3><hr><p>There are <code>n</code> people standing in a line labeled from <code>1</code> to <code>n</code>. The first person in the line is holding a pillow initially. Every second, the person holding the pillow passes it to the next person standing in the line. Once the pillow reaches the end of the line, the direction changes, and people continue passing the pillow in the opposite direction.</p>
 
 <ul>
 	<li>For example, once the pillow reaches the <code>n<sup>th</sup></code> person they pass it to the <code>n - 1<sup>th</sup></code> person, then to the <code>n - 2<sup>th</sup></code> person and so on.</li>
@@ -31,3 +31,6 @@ After two seconds, the 3<sup>r</sup><sup>d</sup> person is holding the pillow.
 	<li><code>2 &lt;= n &lt;= 1000</code></li>
 	<li><code>1 &lt;= time &lt;= 1000</code></li>
 </ul>
+
+<p>&nbsp;</p>
+<p><strong>Note:</strong> This question is the same as <a href="https://leetcode.com/problems/find-the-child-who-has-the-ball-after-k-seconds/description/" target="_blank"> 3178: Find the Child Who Has the Ball After K Seconds.</a></p>
