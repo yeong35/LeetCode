@@ -5,19 +5,21 @@ class Solution:
 
         for i in asteroids:
             crushed = False
-            
-            if stack and stack[-1] > 0 and i < 0:
 
-                while stack and stack[-1] > 0 and stack[-1] < -i:
+            while stack and stack[-1] > 0 and i < 0:
+                if abs(stack[-1]) > abs(i):
+                    crushed = True
+                    break
+                elif abs(stack[-1]) == abs(i):
                     stack.pop()
-                if stack and stack[-1] == -i:
+                    crushed = True
+                    break
+                else:
                     stack.pop()
-                    crushed=True
-                elif stack and stack[-1] > -i:
-                    crushed=True
             
-
             if not crushed:
                 stack.append(i)
 
+
         return stack
+                
