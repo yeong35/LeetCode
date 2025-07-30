@@ -8,13 +8,15 @@ class Solution:
         if not head.next:
             return None
         
+        prev = head
         slow = head
-        fast = head.next
+        fast = head
 
-        while fast.next and fast.next.next:
+        while fast and fast.next:
+            prev = slow
             slow = slow.next
             fast = fast.next.next
-        print(slow.val)
-        slow.next = slow.next.next
+        
+        prev.next = slow.next
 
         return head
