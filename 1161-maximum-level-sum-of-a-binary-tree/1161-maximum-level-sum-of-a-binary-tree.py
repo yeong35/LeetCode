@@ -6,32 +6,26 @@
 #         self.right = right
 class Solution:
     def maxLevelSum(self, root: Optional[TreeNode]) -> int:
-        maximum = float('-inf')
-        curr_level = 1
-        result_level = 1
+        q = [root]
+        return_index = 0
+        idx = 0
+        big = float('-inf')
 
-        queue = [root]
-        
-        while queue:
-            n = len(queue)
+        while q:
+            n = len(q)
+            temp = 0
 
-            total = 0
             for i in range(n):
-                curr = queue.pop(0)
-                total += curr.val
+                curr = q.pop(0)
+                temp += curr.val
 
                 if curr.left:
-                    queue.append(curr.left)
+                    q.append(curr.left)
                 if curr.right:
-                    queue.append(curr.right)
+                    q.append(curr.right)
             
-            if total > maximum:
-                maximum = total
-                result_level = curr_level
-
-            curr_level += 1
-
-
-
-
-        return result_level
+            if temp > big:
+                return_index = idx
+                big = temp
+            idx+=1
+        return return_index+1
