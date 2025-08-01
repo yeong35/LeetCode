@@ -1,22 +1,24 @@
 class Solution:
     def successfulPairs(self, spells: List[int], potions: List[int], success: int) -> List[int]:
-        def countSuccess(i, potions, threshold):
+        def binary_search(spell, potions, success):
             left = 0
             right = len(potions)-1
             mid = (left+right)//2
 
-            while left<=right:
-                if potions[mid]*i < threshold:
-                    left = mid+1
-                elif potions[mid]*i >= threshold:
-                    right = mid-1
+            while left <= right:
+                if potions[mid]*spell < success:
+                    left = mid + 1
+                else:
+                    right = mid - 1
                 mid = (left+right)//2
 
-            return len(potions)-mid-1
+            return mid
+
+
 
         potions.sort()
         result = []
         for i in spells:
-            result.append(countSuccess(i, potions, success))
+            result.append(len(potions)-binary_search(i, potions, success)-1)
         
         return result
