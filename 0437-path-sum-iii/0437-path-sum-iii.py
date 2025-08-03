@@ -6,27 +6,24 @@
 #         self.right = right
 class Solution:
     def pathSum(self, root: Optional[TreeNode], targetSum: int) -> int:
-        def pathCheck(root, h, curr):
-            nonlocal cnt 
-
+        cnt = 0
+        def validate(root, h, curr):
+            nonlocal cnt
             if not root:
                 return
-
+            
             curr += root.val
-
-            h[curr] += 1
+            if curr == targetSum:
+                cnt += 1
+            
             cnt += h[curr-targetSum]
+            h[curr] += 1
 
-            pathCheck(root.left, h, curr)
-            pathCheck(root.right, h, curr)
-
-            h[curr] -= 1
-        
-        
-        h = defaultdict(int)
-        h[0] += 1
-        cnt = 0
-
-        pathCheck(root, h, 0)
+            validate(root.left, h, curr)
+            validate(root.right, h, curr)
+            
+            h[curr] -=1
+            
+        validate(root, defaultdict(int), 0)
 
         return cnt
