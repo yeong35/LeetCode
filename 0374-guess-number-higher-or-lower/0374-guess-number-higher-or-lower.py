@@ -7,20 +7,18 @@
 
 class Solution:
     def guessNumber(self, n: int) -> int:
-        low = 1
-        high = n
-        mid = (low+high)//2
+        left = 0
+        right = n
+        mid = (left+right)//2
 
-        while low < high:
-
-            g = guess(mid)
-            if g > 0:
-                low = mid+1
-            elif g < 0:
-                high = mid-1
+        while left<right:
+            if guess(mid) == 1:
+                left = mid + 1
+            elif guess(mid) == -1:
+                right = mid - 1
             else:
                 break
             
-            mid = (low+high)//2
+            mid = (left+right)//2
         
         return mid
