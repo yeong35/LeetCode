@@ -1,20 +1,19 @@
 class Solution:
     def letterCombinations(self, digits: str) -> List[str]:
-        if digits=='':
-            return []
-        arr = [['a', 'b', 'c'], ['d','e','f'], ['g','h','i'], ['j', 'k', 'l'], ['m', 'n', 'o'], ['p', 'q', 'r', 's'], ['t', 'u', 'v'], ['w', 'x', 'y', 'z']]
-
-        def backtracking(digits, arr, temp):
-            if len(digits)==1:
-                for c in arr[int(digits[0])-2]:
-                    result.append(temp+c)
+        def backtracking(digits, temp):
+            if len(digits) == 0:
+                result.append(temp)
+                return
             else:
-                for c in arr[int(digits[0])-2]:
-                    backtracking(digits[1:], arr, temp+c)
+                for i in d[digits[0]]:
+                    backtracking(digits[1:], temp+i)
+        if digits == "":
+            return []
 
-        
+
+        d = {'2':'abc', '3':'def', '4':'ghi', '5':'jkl', '6':'mno', '7':'pqrs', '8':'tuv', '9':'wxyz'}
+
         result = []
-        backtracking(digits, arr, "")
+        backtracking(digits, "")
 
-        
         return result
