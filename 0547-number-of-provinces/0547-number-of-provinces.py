@@ -5,7 +5,7 @@ class Solution:
                 parent[x] = find(parent[x])
             return parent[x]
 
-        def union(x,y):
+        def union(x, y):
             x = find(x)
             y = find(y)
 
@@ -17,12 +17,12 @@ class Solution:
         n = len(isConnected)
         parent = [i for i in range(n)]
 
-        for i in range(n):
+        for i in range(n): 
             for j in range(n):
-                if isConnected[i][j] == 1:
-                    union(i,j)
-        
+                if i != j and isConnected[i][j] == 1:
+                    union(i, j)
+
         for i in range(n):
             find(i)
-
+        
         return len(set(parent))
