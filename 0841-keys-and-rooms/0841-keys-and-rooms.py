@@ -1,16 +1,15 @@
 class Solution:
     def canVisitAllRooms(self, rooms: List[List[int]]) -> bool:
-        visit = set()
-
+        visit = {0}
         stack = [0]
-        visit.add(0)
 
         while stack:
             curr = stack.pop()
 
-            for key in rooms[curr]:
-                if key not in visit:
-                    stack.append(key)
-                    visit.add(key)
+            for i in rooms[curr]:
+                if i not in visit:
+                    visit.add(i)
+                    stack.append(i)
 
         return len(visit) == len(rooms)
+
