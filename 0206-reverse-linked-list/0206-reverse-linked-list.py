@@ -8,10 +8,11 @@ class Solution:
         if not head:
             return head
         
-        prev, curr, future = None, head, head.next
+        prev = None
+        curr = head
 
         while curr:
-            prev, curr.next, future = curr, prev, curr.next
-            curr = future
+            prev, curr.next, curr = curr, prev, curr.next
+        
 
         return prev
