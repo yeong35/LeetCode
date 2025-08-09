@@ -10,7 +10,7 @@ class Solution:
             for j in range(len(grid[0])):
                 temp.append(grid[j][i])
 
-                cnt+=s[tuple(temp)]
+            cnt+=s[tuple(temp)]
         
 
         return cnt
