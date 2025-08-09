@@ -1,18 +1,16 @@
 class Solution:
     def equalPairs(self, grid: List[List[int]]) -> int:
-        h = defaultdict(int)
-        n = len(grid)
+        s = defaultdict(int)
         cnt = 0
-
         for i in grid:
-            h[tuple(i)] += 1
-        
-        for i in range(n):
+            s[tuple(i)] += 1
+
+        for i in range(len(grid)):
             temp = []
-            for j in range(n):
+            for j in range(len(grid[0])):
                 temp.append(grid[j][i])
-            
-            cnt += h[tuple(temp)]
+
+                cnt+=s[tuple(temp)]
         
+
         return cnt
-        
