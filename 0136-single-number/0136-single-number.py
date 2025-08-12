@@ -1,9 +1,8 @@
 class Solution:
     def singleNumber(self, nums: List[int]) -> int:
-        cnt = Counter(nums)
+        temp = nums[0]
 
-        for i in cnt:
-            if cnt[i] == 1:
-                return i
-        
-        return -1
+        for i in nums[1:]:
+            temp = temp^i
+
+        return temp
