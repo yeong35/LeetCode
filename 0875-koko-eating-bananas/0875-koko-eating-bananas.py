@@ -1,31 +1,21 @@
 class Solution:
     def minEatingSpeed(self, piles: List[int], h: int) -> int:
-        def count(piles, consume):
-            hour = 0
+        left = 1
+        right = max(piles)
+
+        mid = (left+right)//2
+
+        while left<right:
+            cnt = 0
 
             for i in piles:
-                if i%consume == 0:
-                    hour += i//consume
-                else:
-                    hour += i//consume + 1
+                cnt += math.ceil(i/mid)
+            if cnt > h:
+                left = mid+1
+            else:
+                right = mid
 
-            return hour
-        
-        def binary_search(right, h):
-            left = 1
             mid = (left+right)//2
-            while left <= right:
-                time = count(piles, mid)
-                # print(mid, time)
-                if h < time:
-                    left = mid + 1
-                elif h >= time:
-                    right = mid - 1
-                
-                mid = (left+right)//2
-
-            return mid+1
-
-        piles.sort()
-        return binary_search(piles[-1], h)            
             
+        
+        return mid
