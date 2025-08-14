@@ -1,37 +1,40 @@
 class Solution:
     def calcEquation(self, equations: List[List[str]], values: List[float], queries: List[List[str]]) -> List[float]:
-        def traverse(start, target, curr):
-            temp = -1.0
+        def evaluate(start, target, h, curr):
+            temp = -1
 
-            if target in graph[start]:
-                return curr*graph[start][target]
-
-            visit.add(start)            
-            for neighbor in graph[start]:
-                if neighbor not in visit:
-                    temp = traverse(neighbor, target, curr*graph[start][neighbor])
-                    if temp != -1:
-                        break
-            
-            visit.remove(start)
+            if start == target:
+                return curr
+            else:
+                for neighbor in h[start]:
+                    if neighbor not in visit:
+                        visit.add(neighbor)
+                        temp = evaluate(neighbor, target, h, curr*h[start][neighbor])
+                        if temp != -1:
+                            break
+                        visit.remove(neighbor)
 
             return temp
-
-        graph = defaultdict(defaultdict)
+        
+        ans = []
+        h = defaultdict(defaultdict)
         visit = set()
 
-        result = []
-
-        for (i, j), k in zip(equations, values):
-            graph[i][j] = k
-            graph[j][i] = 1/k
-
-        for i, j in queries:
-            if i not in graph or j not in graph:
-                result.append(-1.0)
-            elif i == j:
-                result.append(1.0)
-            else:
-                result.append(traverse(i, j, 1))
+        for (a, b), value in zip(equations, values):
+            h[a][b]=value
+            h[b][a]=1/value
         
-        return result
+        for a, b in queries:
+            temp = 1
+            if a not in h or b not in h:
+                temp = -1
+            elif a == b:
+                temp = 1
+            else:
+                visit = set()
+                visit.add(a)
+                temp = evaluate(a, b, h, 1)
+                
+            ans.append(temp)
+    
+        return ans
