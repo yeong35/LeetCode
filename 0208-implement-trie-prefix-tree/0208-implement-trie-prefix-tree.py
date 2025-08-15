@@ -1,56 +1,47 @@
-class Node(object):
-    def __init__(self, key, data=None):
-        self.key = key
-        self.data = data
-        self.children = {}
-class Trie:
+class TrieNode:
     def __init__(self):
-        self.head = Node(None)
+        self.children = {}
+        self.end = False
 
-    def insert(self, string):
-        current_node = self.head
+class Trie:
 
-        for char in string:
-            if char not in current_node.children:
-                current_node.children[char] = Node(char)
-            current_node = current_node.children[char]
-        current_node.data = string
+    def __init__(self):
+        self.root = TrieNode()
 
-    def search(self, string):
-        current_node = self.head
+    def insert(self, word: str) -> None:
+        curr = self.root
 
-        for char in string:
-            if char in current_node.children:
-                current_node = current_node.children[char]
-            else:
+        for c in word:
+            if c not in curr.children:
+                curr.children[c] = TrieNode()
+            curr = curr.children[c]
+        curr.end = True
+        
+
+    def search(self, word: str) -> bool:
+        curr = self.root
+
+        for c in word:
+            if c not in curr.children:
                 return False
+            curr = curr.children[c]
+        
+        return curr.end
 
-        if current_node.data:
-            return True
-        else:
-            return False
+    def startsWith(self, prefix: str) -> bool:
+        curr = self.root
 
-    def startsWith(self, prefix):
-        current_node = self.head
-        words = []
-
-        for p in prefix:
-            if p in current_node.children:
-                current_node = current_node.children[p]
-            else:
+        for c in prefix:
+            if c not in curr.children:
                 return False
-
-        current_node = [current_node]
-        next_node = []
-        while True:
-            for node in current_node:
-                if node.data:
-                    words.append(node.data)
-                next_node.extend(list(node.children.values()))
-            if len(next_node) != 0:
-                current_node = next_node
-                next_node = []
-            else:
-                break
-
+            curr = curr.children[c]
+        
         return True
+        
+
+
+# Your Trie object will be instantiated and called as such:
+# obj = Trie()
+# obj.insert(word)
+# param_2 = obj.search(word)
+# param_3 = obj.startsWith(prefix)
