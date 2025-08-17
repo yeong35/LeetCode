@@ -9,16 +9,17 @@ class Solution:
     def guessNumber(self, n: int) -> int:
         left = 0
         right = n
-        mid = (left+right)//2
 
-        while left<right:
-            if guess(mid) == 1:
-                left = mid + 1
-            elif guess(mid) == -1:
-                right = mid - 1
-            else:
-                break
-            
+        while left < right:
             mid = (left+right)//2
-        
-        return mid
+            ans = guess(mid)
+
+            if ans > 0:
+                left = mid+1
+            elif ans < 0:
+                right = mid
+            else:
+                return mid
+
+        return left
+
