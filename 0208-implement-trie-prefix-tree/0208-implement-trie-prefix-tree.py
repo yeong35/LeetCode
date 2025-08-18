@@ -11,33 +11,30 @@ class Trie:
     def insert(self, word: str) -> None:
         curr = self.root
 
-        for c in word:
-            if c not in curr.children:
-                curr.children[c] = TrieNode()
-            curr = curr.children[c]
+        for i in word:
+            if i not in curr.children:
+                curr.children[i] = TrieNode()
+            curr = curr.children[i]
         curr.end = True
-        
+
 
     def search(self, word: str) -> bool:
         curr = self.root
 
-        for c in word:
-            if c not in curr.children:
+        for i in word:
+            if i not in curr.children:
                 return False
-            curr = curr.children[c]
-        
+            curr = curr.children[i]
         return curr.end
 
     def startsWith(self, prefix: str) -> bool:
         curr = self.root
 
-        for c in prefix:
-            if c not in curr.children:
+        for i in prefix:
+            if i not in curr.children:
                 return False
-            curr = curr.children[c]
-        
+            curr = curr.children[i]
         return True
-        
 
 
 # Your Trie object will be instantiated and called as such:
