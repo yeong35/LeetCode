@@ -2,10 +2,10 @@ class Solution:
     def minCostClimbingStairs(self, cost: List[int]) -> int:
         if len(cost) < 3:
             return min(cost)
-
-        arr = cost[:2]
+        
+        dp = cost[:2]
 
         for i in range(2, len(cost)):
-            arr.append(cost[i]+min(arr[i-2], arr[i-1]))
+            dp.append(min(dp[i-1], dp[i-2])+cost[i])
 
-        return min(arr[-1], arr[-2])
+        return min(dp[-1], dp[-2])
