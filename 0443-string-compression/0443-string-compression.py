@@ -1,30 +1,29 @@
 class Solution:
     def compress(self, chars: List[str]) -> int:
-        left = 0
-        idx = 0
+        n = len(chars)
         c = chars[0]
+        idx = 0
+        left = 0
+        right = 0
 
-        
-        for right in range(len(chars)):
-            if chars[right] != c:
-                chars[idx] = c
-                idx+=1
-                if right - left > 1:
-                    n = str(right-left)
-                    for i in n:
-                        chars[idx] = i
-                        idx+=1
+        while right < n:
+            while right < n and chars[right] == c:
+                right+=1
 
-                c = chars[right]
-                left = right
-        
+            chars[idx] = c
+            idx+=1
+            c = chars[right] if right < n else ''
 
-        chars[idx] = c
-        idx+=1
-        if len(chars) - left > 1:
-            n = str(len(chars)-left)
-            for i in n:
-                chars[idx] = i
-                idx+=1
+            if right - left > 1:
+                m = str(right - left)
+
+                for i in m:
+                    chars[idx] = i
+                    idx+=1
+
+            left = right
 
         return idx
+
+        
+
