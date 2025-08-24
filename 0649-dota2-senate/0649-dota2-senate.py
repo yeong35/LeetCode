@@ -1,25 +1,25 @@
 class Solution:
     def predictPartyVictory(self, senate: str) -> str:
-        r = []
-        d = []
-
-        for i in range(len(senate)):
+        radiant = []
+        dire = []
+        n = len(senate)
+        for i in range(n):
             if senate[i] == 'R':
-                r.append(i)
+                radiant.append(i)
             else:
-                d.append(i)
+                dire.append(i)
+
+        while radiant and dire:
+            r = radiant.pop(0)
+            d = dire.pop(0)
+
+            if r < d:
+                radiant.append(r+n)
+            else:
+                dire.append(d+n)
 
 
-        while r and d:
-            s1 = r.pop(0)
-            s2 = d.pop(0)
-            
-            if s1 < s2:
-                r.append(len(senate)+s1)
-            else:
-                d.append(len(senate)+s2)
-        
-        if r:
-            return "Radiant"
+        if radiant:
+            return 'Radiant'
         else:
-            return "Dire"
+            return 'Dire'
