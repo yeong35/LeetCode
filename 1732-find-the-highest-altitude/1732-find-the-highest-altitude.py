@@ -1,10 +1,15 @@
-class Solution:
-    def largestAltitude(self, gain: List[int]) -> int:
+class Solution(object):
+    def largestAltitude(self, gain):
+        """
+        :type gain: List[int]
+        :rtype: int
+        """
+        highest = 0
         curr = 0
-        result = 0
 
         for i in gain:
             curr += i
-            result = max(result, curr)
 
-        return result
+            highest = max(highest, curr)
+
+        return highest
