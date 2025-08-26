@@ -1,4 +1,4 @@
 import pandas as pd
 
 def dropMissingData(students: pd.DataFrame) -> pd.DataFrame:
-    return students.dropna(subset='name', how='any',inplace=True)
+    return students.dropna(subset=['name'])
