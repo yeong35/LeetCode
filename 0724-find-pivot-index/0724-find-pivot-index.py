@@ -1,11 +1,17 @@
 class Solution:
     def pivotIndex(self, nums: List[int]) -> int:
-        total = sum(nums)
-        past = 0
+        ans = -1
+        left = 0
+        right = sum(nums)
 
         for i in range(len(nums)):
-            if past*2 == total-nums[i]:
-                return i
-            past += nums[i]
-        
-        return -1
+            right -= nums[i]
+            
+            if left == right:
+                ans = i
+                break
+            
+            left += nums[i]
+            
+
+        return ans
