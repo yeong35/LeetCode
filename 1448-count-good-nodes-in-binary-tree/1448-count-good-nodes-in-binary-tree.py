@@ -6,19 +6,13 @@
 #         self.right = right
 class Solution:
     def goodNodes(self, root: TreeNode) -> int:
-        def count_good_nodes(root, threshold):
+        def validate(root, threshold):
             if not root:
-                return
-            
-            if root.val >= threshold:
-                self.result+=1
-            
-            count_good_nodes(root.left, max(threshold, root.val))
-            count_good_nodes(root.right, max(threshold, root.val))
+                return 0
+            elif root.val >= threshold:
+                threshold = max(root.val, threshold)
+                return 1+validate(root.left, threshold)+validate(root.right, threshold)
+            else:
+                return validate(root.left, threshold)+validate(root.right, threshold)
         
-        if not root:
-            return 0
-
-        self.result = 0
-        count_good_nodes(root, root.val)
-        return self.result
+        return validate(root, root.val)
