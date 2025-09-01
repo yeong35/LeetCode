@@ -5,33 +5,31 @@
 #         self.next = next
 class Solution:
     def deleteNodes(self, head: Optional[ListNode], m: int, n: int) -> Optional[ListNode]:
-        if not head:
-            return head
-        
-        mCount = 1
+        mCount = 0
         nCount = 0
 
         curr = head
-        nNode = head
+        prev = head
 
         while curr:
             if mCount < m:
                 mCount+=1
-                
-                curr = curr.next
-                nNode = nNode.next
-            elif nCount <= n:
-                nCount += 1
-                
-                curr = curr.next
+
+                prev = curr
+
             else:
-                mCount = 1
-                nCount = 1
+                if nCount < n:
+                    nCount+=1
+                else:
+                    prev.next = curr
+                    prev = curr
+                    
+                    mCount = 1
+                    nCount = 0
 
-                nNode.next = curr
-                curr = curr.next
-                nNode = nNode.next
+            curr = curr.next
+
+        prev.next = None
         
-        nNode.next = None
-
         return head
+            
