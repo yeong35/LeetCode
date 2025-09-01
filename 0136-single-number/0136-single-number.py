@@ -3,6 +3,6 @@ class Solution:
         temp = 0
 
         for i in nums:
-            temp = temp^i
+            temp = temp ^ i
 
         return temp
