@@ -9,8 +9,12 @@ class Solution:
         a = headA
         b = headB
 
-        while a != b:
+        while a or b:
+
+            if a == b:
+                return a
+
             a = a.next if a else headB
             b = b.next if b else headA
-        
-        return a
+
+        return None
