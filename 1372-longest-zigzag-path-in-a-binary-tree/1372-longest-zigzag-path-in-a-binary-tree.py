@@ -5,20 +5,23 @@
 #         self.left = left
 #         self.right = right
 class Solution:
+    def __init__(self):
+        self.ans = 0
     def longestZigZag(self, root: Optional[TreeNode]) -> int:
-        def zigzag(root, left, curr):
-            if not root: 
+        def zigzag(root, isleft, cnt):
+            if not root:
                 return
-            
-            self.result = max(self.result, curr)
+            self.ans = max(self.ans, cnt)
 
-            if left:
+            if isleft:
                 zigzag(root.left, True, 1)
-                zigzag(root.right, False, curr+1)
+                zigzag(root.right, False, 1+cnt)
             else:
-                zigzag(root.left, True, curr+1)
+                zigzag(root.left, True, 1+cnt)
                 zigzag(root.right, False, 1)
+
+        zigzag(root.left, True, 1)
+        zigzag(root.right, False, 1)
         
-        self.result = 0
-        zigzag(root, True, self.result)
-        return self.result
+        return self.ans
+
