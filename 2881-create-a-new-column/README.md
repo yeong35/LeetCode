@@ -1,4 +1,4 @@
-<h2><a href="https://leetcode.com/problems/create-a-new-column">2881. Create a New Column</a></h2><h3>Easy</h3><hr><pre>
+<h2><a href="https://leetcode.com/problems/create-a-new-column/editorial/">2881. Create a New Column</a></h2><h3>Easy</h3><hr><pre>
 DataFrame <code>employees</code>
 +-------------+--------+
 | Column Name | Type.  |
