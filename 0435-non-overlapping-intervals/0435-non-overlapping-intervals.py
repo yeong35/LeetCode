@@ -1,12 +1,12 @@
 class Solution:
     def eraseOverlapIntervals(self, intervals: List[List[int]]) -> int:
-        intervals.sort(key = lambda x : x[1])
 
-        cnt = 0
+        intervals.sort(key=lambda x:x[1])
         end = float('-inf')
+        cnt = 0
 
-        for i,j in intervals:
-            if i >= end:
+        for i, j in intervals:
+            if end <= i:
                 end = j
             else:
                 cnt+=1
