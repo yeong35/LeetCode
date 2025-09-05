@@ -7,26 +7,21 @@
 
 class Solution:
     def __init__(self):
-        self.ancestor = None
+        self.ans = None
     def lowestCommonAncestor(self, root: 'TreeNode', p: 'TreeNode', q: 'TreeNode') -> 'TreeNode':
-        
-        def find_value(root, p, q):
+        def search(root, p, q):
             if not root:
-                return False
+                return 0
             
+            mid = 1 if root == p or root == q else 0
+            left = search(root.left, p, q)
+            right = search(root.right, p, q)
 
-            left = find_value(root.left, p, q)
-            right = find_value(root.right, p, q)
-            mid = True if p == root or q == root else False
-
-            if mid + left + right > 1:
-                self.ancestor = root
+            if mid+left+right > 1:
+                self.ans = root
             
+            return mid or left or right
             
-            if left or right or mid:
-                return True
-            return False
+        search(root, p, q)
 
-        find_value(root, p, q)
-
-        return self.ancestor
+        return self.ans
