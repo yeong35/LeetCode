@@ -1,20 +1,13 @@
 class Solution:
     def isSubsequence(self, s: str, t: str) -> bool:
-        if len(s) > len(t):
-            return False
+        p1 = 0
+        p2 = 0
 
-        idx1 = 0
-        idx2 = 0
-        
-        while idx1<len(s) and idx2<len(t):
-            
-            temp1 = s[idx1] if idx1<len(s) else ""
-            temp2 = t[idx2] if idx2<len(t) else ""
-
-            if temp1==temp2:
-                idx1+=1
-                idx2+=1
+        while p1 < len(s) and p2 < len(t):
+            if s[p1] == t[p2]:
+                p1+=1
+                p2+=1
             else:
-                idx2+=1
-            
-        return idx1 == len(s)
+                p2+=1
+        
+        return p1 == len(s)
