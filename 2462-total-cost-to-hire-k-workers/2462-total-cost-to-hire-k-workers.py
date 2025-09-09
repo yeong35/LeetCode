@@ -1,26 +1,27 @@
 class Solution:
     def totalCost(self, costs: List[int], k: int, candidates: int) -> int:
-        left = costs[:candidates]
-        right = costs[max(candidates, len(costs)-candidates):]
+        n = len(costs)
+        head = costs[:candidates]
+        tail = costs[max(n-candidates, candidates):]
+        head_idx = candidates
+        tail_idx = max(n-candidates, candidates)-1
 
-        left_idx = candidates
-        right_idx = max(candidates, len(costs)-candidates)-1
-
-        heapq.heapify(left)
-        heapq.heapify(right)
+        heapq.heapify(head)
+        heapq.heapify(tail)
 
         total = 0
 
-        for _ in range(k):
-            if not right or left[0] <= right[0]:
-                total += heapq.heappop(left)
-                if left_idx <= right_idx:
-                    heapq.heappush(left, costs[left_idx])
-                    left_idx+=1
+        while k > 0:
+            if not tail or head and head[0] <= tail[0]:
+                total += heapq.heappop(head)
+                if head_idx <= tail_idx:
+                    heapq.heappush(head, costs[head_idx])
+                    head_idx+=1
             else:
-                total += heapq.heappop(right)
-                if left_idx <= right_idx:
-                    heapq.heappush(right, costs[right_idx])
-                    right_idx-=1
+                total += heapq.heappop(tail)
+                if head_idx <= tail_idx:
+                    heapq.heappush(tail, costs[tail_idx])
+                    tail_idx-=1
+            k-=1
 
         return total
