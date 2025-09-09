@@ -5,7 +5,7 @@ class Solution:
 
         idx1 = 0
         idx2 = 0
-        print(s, t)
+        
         while idx1<len(s) and idx2<len(t):
             
             temp1 = s[idx1] if idx1<len(s) else ""
