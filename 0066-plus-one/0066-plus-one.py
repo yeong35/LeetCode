@@ -1,14 +1,15 @@
 class Solution:
     def plusOne(self, digits: List[int]) -> List[int]:
-        num = "".join(str(i) for i in digits)
-        num = int(num)+1
+        plus = 1
+        length = len(digits)
 
-        num = str(num)
+        for i in range(len(digits)):
+            digits[length-i-1] += plus
 
-        result = []
+            plus = digits[length-i-1]//10
+            digits[length-i-1] %= 10
 
-        for i in num:
-            print(int(i))
-            result.append(int(i))
-
-        return result
+        if plus != 0:
+            digits = [plus]+digits
+        
+        return digits
