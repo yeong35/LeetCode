@@ -4,7 +4,10 @@ class Leaderboard:
         self.board = dict()
 
     def addScore(self, playerId: int, score: int) -> None:
-        self.board[playerId] = score
+        if playerId in self.board:
+            self.board[playerId] += score
+        else:
+            self.board[playerId] = score
 
     def top(self, K: int) -> int:
         topK = []
@@ -13,11 +16,12 @@ class Leaderboard:
             heapq.heappush(topK, self.board[i])
             if len(topK) > K:
                 heapq.heappop(topK)
-
+                
         return sum(topK)
 
     def reset(self, playerId: int) -> None:
         self.board[playerId] = 0
+        
         
 
 
