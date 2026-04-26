@@ -14,6 +14,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 ## Array
 | Problem Name | Difficulty |
 | ------- | ------- |
+| [0252-meeting-rooms](https://github.com/yeong35/LeetCode/tree/main/0252-meeting-rooms/) | Easy |
 | [0281-zigzag-iterator](https://github.com/yeong35/LeetCode/tree/main/0281-zigzag-iterator/) | Medium |
 | [1559-detect-cycles-in-2d-grid](https://github.com/yeong35/LeetCode/tree/main/1559-detect-cycles-in-2d-grid/) | Medium |
 ## Depth-First Search
@@ -44,4 +45,8 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [0281-zigzag-iterator](https://github.com/yeong35/LeetCode/tree/main/0281-zigzag-iterator/) | Medium |
+## Sorting
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [0252-meeting-rooms](https://github.com/yeong35/LeetCode/tree/main/0252-meeting-rooms/) | Easy |
 <!---LeetCode Topics End-->
