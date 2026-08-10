@@ -5,24 +5,31 @@
 #         self.left = left
 #         self.right = right
 class Solution:
-    def __init__(self):
-        self.result = []
     def pathSum(self, root: Optional[TreeNode], targetSum: int) -> List[List[int]]:
-        def dfs(root, storage, targetSum):
+        def validPath(root, targetSum, currSum, temp):
             if not root:
                 return
+
+            currSum += root.val
+            temp.append(root.val)
+
+            # leaf node
+            if not root.left and not root.right:
+                if currSum==targetSum:
+                    result.append(temp[:])
+
+            if root.left:
+                validPath(root.left, targetSum, currSum, temp)
+            if root.right:
+                validPath(root.right, targetSum, currSum, temp)
+
+            temp.pop()
+            currSum -= root.val
+
+            return
             
-            storage.append(root.val)
-            targetSum -= root.val
+        result = []
+        validPath(root, targetSum, 0, [])
+        return result
 
-            if not root.left and not root.right and targetSum == 0:
-                self.result.append(list(storage))
-            
-            dfs(root.left, storage, targetSum)
-            dfs(root.right, storage, targetSum)
 
-            storage.pop()
-
-        dfs(root, [], targetSum)
-
-        return self.result
