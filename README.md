@@ -6,6 +6,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 ## String
 | Problem Name | Difficulty |
 | ------- | ------- |
+| [0647-palindromic-substrings](https://github.com/yeong35/LeetCode/tree/main/0647-palindromic-substrings/) | Medium |
 | [0657-robot-return-to-origin](https://github.com/yeong35/LeetCode/tree/main/0657-robot-return-to-origin/) | Easy |
 ## Simulation
 | Problem Name | Difficulty |
@@ -73,4 +74,12 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [0113-path-sum-ii](https://github.com/yeong35/LeetCode/tree/main/0113-path-sum-ii/) | Medium |
+## Two Pointers
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [0647-palindromic-substrings](https://github.com/yeong35/LeetCode/tree/main/0647-palindromic-substrings/) | Medium |
+## Dynamic Programming
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [0647-palindromic-substrings](https://github.com/yeong35/LeetCode/tree/main/0647-palindromic-substrings/) | Medium |
 <!---LeetCode Topics End-->
