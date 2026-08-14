@@ -9,7 +9,7 @@ class Solution:
 
             counter[s[right]]+=1
 
-            while counter[s[right]]>2 and left < len(s):
+            while counter[s[right]]>2:
                 counter[s[left]]-=1
                 left+=1
             
