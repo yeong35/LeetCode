@@ -24,6 +24,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [0113-path-sum-ii](https://github.com/yeong35/LeetCode/tree/main/0113-path-sum-ii/) | Medium |
+| [0572-subtree-of-another-tree](https://github.com/yeong35/LeetCode/tree/main/0572-subtree-of-another-tree/) | Easy |
 | [1559-detect-cycles-in-2d-grid](https://github.com/yeong35/LeetCode/tree/main/1559-detect-cycles-in-2d-grid/) | Medium |
 | [2331-evaluate-boolean-binary-tree](https://github.com/yeong35/LeetCode/tree/main/2331-evaluate-boolean-binary-tree/) | Easy |
 ## Breadth-First Search
@@ -66,11 +67,13 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [0113-path-sum-ii](https://github.com/yeong35/LeetCode/tree/main/0113-path-sum-ii/) | Medium |
+| [0572-subtree-of-another-tree](https://github.com/yeong35/LeetCode/tree/main/0572-subtree-of-another-tree/) | Easy |
 | [2331-evaluate-boolean-binary-tree](https://github.com/yeong35/LeetCode/tree/main/2331-evaluate-boolean-binary-tree/) | Easy |
 ## Binary Tree
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [0113-path-sum-ii](https://github.com/yeong35/LeetCode/tree/main/0113-path-sum-ii/) | Medium |
+| [0572-subtree-of-another-tree](https://github.com/yeong35/LeetCode/tree/main/0572-subtree-of-another-tree/) | Easy |
 | [2331-evaluate-boolean-binary-tree](https://github.com/yeong35/LeetCode/tree/main/2331-evaluate-boolean-binary-tree/) | Easy |
 ## Backtracking
 | Problem Name | Difficulty |
@@ -104,4 +107,12 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [3090-maximum-length-substring-with-two-occurrences](https://github.com/yeong35/LeetCode/tree/main/3090-maximum-length-substring-with-two-occurrences/) | Easy |
+## String Matching
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [0572-subtree-of-another-tree](https://github.com/yeong35/LeetCode/tree/main/0572-subtree-of-another-tree/) | Easy |
+## Hash Function
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [0572-subtree-of-another-tree](https://github.com/yeong35/LeetCode/tree/main/0572-subtree-of-another-tree/) | Easy |
 <!---LeetCode Topics End-->
