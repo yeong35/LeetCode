@@ -20,6 +20,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [0281-zigzag-iterator](https://github.com/yeong35/LeetCode/tree/main/0281-zigzag-iterator/) | Medium |
 | [0875-koko-eating-bananas](https://github.com/yeong35/LeetCode/tree/main/0875-koko-eating-bananas/) | Medium |
 | [1559-detect-cycles-in-2d-grid](https://github.com/yeong35/LeetCode/tree/main/1559-detect-cycles-in-2d-grid/) | Medium |
+| [2542-maximum-subsequence-score](https://github.com/yeong35/LeetCode/tree/main/2542-maximum-subsequence-score/) | Medium |
 | [3471-find-the-largest-almost-missing-integer](https://github.com/yeong35/LeetCode/tree/main/3471-find-the-largest-almost-missing-integer/) | Easy |
 ## Depth-First Search
 | Problem Name | Difficulty |
@@ -56,6 +57,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [0252-meeting-rooms](https://github.com/yeong35/LeetCode/tree/main/0252-meeting-rooms/) | Easy |
+| [2542-maximum-subsequence-score](https://github.com/yeong35/LeetCode/tree/main/2542-maximum-subsequence-score/) | Medium |
 ## Divide and Conquer
 | Problem Name | Difficulty |
 | ------- | ------- |
@@ -119,4 +121,12 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [0572-subtree-of-another-tree](https://github.com/yeong35/LeetCode/tree/main/0572-subtree-of-another-tree/) | Easy |
+## Greedy
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [2542-maximum-subsequence-score](https://github.com/yeong35/LeetCode/tree/main/2542-maximum-subsequence-score/) | Medium |
+## Heap (Priority Queue)
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [2542-maximum-subsequence-score](https://github.com/yeong35/LeetCode/tree/main/2542-maximum-subsequence-score/) | Medium |
 <!---LeetCode Topics End-->
