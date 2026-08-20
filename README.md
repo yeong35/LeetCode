@@ -13,6 +13,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [0657-robot-return-to-origin](https://github.com/yeong35/LeetCode/tree/main/0657-robot-return-to-origin/) | Easy |
+| [3069-distribute-elements-into-two-arrays-i](https://github.com/yeong35/LeetCode/tree/main/3069-distribute-elements-into-two-arrays-i/) | Easy |
 ## Array
 | Problem Name | Difficulty |
 | ------- | ------- |
@@ -23,6 +24,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [1386-cinema-seat-allocation](https://github.com/yeong35/LeetCode/tree/main/1386-cinema-seat-allocation/) | Medium |
 | [1559-detect-cycles-in-2d-grid](https://github.com/yeong35/LeetCode/tree/main/1559-detect-cycles-in-2d-grid/) | Medium |
 | [2542-maximum-subsequence-score](https://github.com/yeong35/LeetCode/tree/main/2542-maximum-subsequence-score/) | Medium |
+| [3069-distribute-elements-into-two-arrays-i](https://github.com/yeong35/LeetCode/tree/main/3069-distribute-elements-into-two-arrays-i/) | Easy |
 | [3471-find-the-largest-almost-missing-integer](https://github.com/yeong35/LeetCode/tree/main/3471-find-the-largest-almost-missing-integer/) | Easy |
 ## Depth-First Search
 | Problem Name | Difficulty |
