@@ -20,6 +20,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [0252-meeting-rooms](https://github.com/yeong35/LeetCode/tree/main/0252-meeting-rooms/) | Easy |
 | [0281-zigzag-iterator](https://github.com/yeong35/LeetCode/tree/main/0281-zigzag-iterator/) | Medium |
 | [0875-koko-eating-bananas](https://github.com/yeong35/LeetCode/tree/main/0875-koko-eating-bananas/) | Medium |
+| [1004-max-consecutive-ones-iii](https://github.com/yeong35/LeetCode/tree/main/1004-max-consecutive-ones-iii/) | Medium |
 | [1383-maximum-performance-of-a-team](https://github.com/yeong35/LeetCode/tree/main/1383-maximum-performance-of-a-team/) | Hard |
 | [1386-cinema-seat-allocation](https://github.com/yeong35/LeetCode/tree/main/1386-cinema-seat-allocation/) | Medium |
 | [1559-detect-cycles-in-2d-grid](https://github.com/yeong35/LeetCode/tree/main/1559-detect-cycles-in-2d-grid/) | Medium |
@@ -111,6 +112,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [0875-koko-eating-bananas](https://github.com/yeong35/LeetCode/tree/main/0875-koko-eating-bananas/) | Medium |
+| [1004-max-consecutive-ones-iii](https://github.com/yeong35/LeetCode/tree/main/1004-max-consecutive-ones-iii/) | Medium |
 ## Hash Table
 | Problem Name | Difficulty |
 | ------- | ------- |
@@ -120,6 +122,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 ## Sliding Window
 | Problem Name | Difficulty |
 | ------- | ------- |
+| [1004-max-consecutive-ones-iii](https://github.com/yeong35/LeetCode/tree/main/1004-max-consecutive-ones-iii/) | Medium |
 | [3090-maximum-length-substring-with-two-occurrences](https://github.com/yeong35/LeetCode/tree/main/3090-maximum-length-substring-with-two-occurrences/) | Easy |
 ## String Matching
 | Problem Name | Difficulty |
@@ -140,4 +143,8 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | ------- | ------- |
 | [1383-maximum-performance-of-a-team](https://github.com/yeong35/LeetCode/tree/main/1383-maximum-performance-of-a-team/) | Hard |
 | [2542-maximum-subsequence-score](https://github.com/yeong35/LeetCode/tree/main/2542-maximum-subsequence-score/) | Medium |
+## Prefix Sum
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [1004-max-consecutive-ones-iii](https://github.com/yeong35/LeetCode/tree/main/1004-max-consecutive-ones-iii/) | Medium |
 <!---LeetCode Topics End-->
