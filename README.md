@@ -31,12 +31,14 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [0113-path-sum-ii](https://github.com/yeong35/LeetCode/tree/main/0113-path-sum-ii/) | Medium |
+| [0207-course-schedule](https://github.com/yeong35/LeetCode/tree/main/0207-course-schedule/) | Medium |
 | [0572-subtree-of-another-tree](https://github.com/yeong35/LeetCode/tree/main/0572-subtree-of-another-tree/) | Easy |
 | [1559-detect-cycles-in-2d-grid](https://github.com/yeong35/LeetCode/tree/main/1559-detect-cycles-in-2d-grid/) | Medium |
 | [2331-evaluate-boolean-binary-tree](https://github.com/yeong35/LeetCode/tree/main/2331-evaluate-boolean-binary-tree/) | Easy |
 ## Breadth-First Search
 | Problem Name | Difficulty |
 | ------- | ------- |
+| [0207-course-schedule](https://github.com/yeong35/LeetCode/tree/main/0207-course-schedule/) | Medium |
 | [1559-detect-cycles-in-2d-grid](https://github.com/yeong35/LeetCode/tree/main/1559-detect-cycles-in-2d-grid/) | Medium |
 ## Union-Find
 | Problem Name | Difficulty |
@@ -154,4 +156,16 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [1004-max-consecutive-ones-iii](https://github.com/yeong35/LeetCode/tree/main/1004-max-consecutive-ones-iii/) | Medium |
+## Graph Theory
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [0207-course-schedule](https://github.com/yeong35/LeetCode/tree/main/0207-course-schedule/) | Medium |
+## Topological Sort
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [0207-course-schedule](https://github.com/yeong35/LeetCode/tree/main/0207-course-schedule/) | Medium |
+## Directed Acyclic Graph
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [0207-course-schedule](https://github.com/yeong35/LeetCode/tree/main/0207-course-schedule/) | Medium |
 <!---LeetCode Topics End-->
