@@ -82,6 +82,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [0191-number-of-1-bits](https://github.com/yeong35/LeetCode/tree/main/0191-number-of-1-bits/) | Easy |
+| [1318-minimum-flips-to-make-a-or-b-equal-to-c](https://github.com/yeong35/LeetCode/tree/main/1318-minimum-flips-to-make-a-or-b-equal-to-c/) | Medium |
 | [1386-cinema-seat-allocation](https://github.com/yeong35/LeetCode/tree/main/1386-cinema-seat-allocation/) | Medium |
 ## Tree
 | Problem Name | Difficulty |
