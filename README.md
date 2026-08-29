@@ -190,4 +190,12 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [0207-course-schedule](https://github.com/yeong35/LeetCode/tree/main/0207-course-schedule/) | Medium |
+## Linked List
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [0206-reverse-linked-list](https://github.com/yeong35/LeetCode/tree/main/0206-reverse-linked-list/) | Easy |
+## Recursion
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [0206-reverse-linked-list](https://github.com/yeong35/LeetCode/tree/main/0206-reverse-linked-list/) | Easy |
 <!---LeetCode Topics End-->
