@@ -36,6 +36,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | ------- | ------- |
 | [0113-path-sum-ii](https://github.com/yeong35/LeetCode/tree/main/0113-path-sum-ii/) | Medium |
 | [0207-course-schedule](https://github.com/yeong35/LeetCode/tree/main/0207-course-schedule/) | Medium |
+| [0437-path-sum-iii](https://github.com/yeong35/LeetCode/tree/main/0437-path-sum-iii/) | Medium |
 | [0547-number-of-provinces](https://github.com/yeong35/LeetCode/tree/main/0547-number-of-provinces/) | Medium |
 | [0572-subtree-of-another-tree](https://github.com/yeong35/LeetCode/tree/main/0572-subtree-of-another-tree/) | Easy |
 | [1161-maximum-level-sum-of-a-binary-tree](https://github.com/yeong35/LeetCode/tree/main/1161-maximum-level-sum-of-a-binary-tree/) | Medium |
@@ -91,6 +92,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [0113-path-sum-ii](https://github.com/yeong35/LeetCode/tree/main/0113-path-sum-ii/) | Medium |
+| [0437-path-sum-iii](https://github.com/yeong35/LeetCode/tree/main/0437-path-sum-iii/) | Medium |
 | [0572-subtree-of-another-tree](https://github.com/yeong35/LeetCode/tree/main/0572-subtree-of-another-tree/) | Easy |
 | [1161-maximum-level-sum-of-a-binary-tree](https://github.com/yeong35/LeetCode/tree/main/1161-maximum-level-sum-of-a-binary-tree/) | Medium |
 | [2331-evaluate-boolean-binary-tree](https://github.com/yeong35/LeetCode/tree/main/2331-evaluate-boolean-binary-tree/) | Easy |
@@ -98,6 +100,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [0113-path-sum-ii](https://github.com/yeong35/LeetCode/tree/main/0113-path-sum-ii/) | Medium |
+| [0437-path-sum-iii](https://github.com/yeong35/LeetCode/tree/main/0437-path-sum-iii/) | Medium |
 | [0572-subtree-of-another-tree](https://github.com/yeong35/LeetCode/tree/main/0572-subtree-of-another-tree/) | Easy |
 | [1161-maximum-level-sum-of-a-binary-tree](https://github.com/yeong35/LeetCode/tree/main/1161-maximum-level-sum-of-a-binary-tree/) | Medium |
 | [2331-evaluate-boolean-binary-tree](https://github.com/yeong35/LeetCode/tree/main/2331-evaluate-boolean-binary-tree/) | Easy |
