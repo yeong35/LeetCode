@@ -118,6 +118,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | ------- | ------- |
 | [0647-palindromic-substrings](https://github.com/yeong35/LeetCode/tree/main/0647-palindromic-substrings/) | Medium |
 | [0746-min-cost-climbing-stairs](https://github.com/yeong35/LeetCode/tree/main/0746-min-cost-climbing-stairs/) | Easy |
+| [0790-domino-and-tromino-tiling](https://github.com/yeong35/LeetCode/tree/main/0790-domino-and-tromino-tiling/) | Medium |
 ## Database
 | Problem Name | Difficulty |
 | ------- | ------- |
